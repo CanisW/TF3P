@@ -124,11 +124,10 @@ def from_mol_to_array(mol):
     Parameters
     ----------
     mol : rdkit.Mol
-        rdkit 的分子实例 must have 3D conformer
+            must have 3D conformer
 
     Returns
     gs_charge : list
-
     atom_type : list
     pos : list of list (N*3)
     -------
@@ -179,7 +178,7 @@ def from_array_to_ff_batch(gs_charge, atom_type, pos, nums_atoms, device=None, g
     '''
     # for detailed computing methods, see ref "Journal of Computational Chemistry, Vol. 17, Nos. 5 &6, 520-552 (1996)"
 
-    from torch_scatter import scatter_add  # commented out for pytorch-0.4.1
+    from torch_scatter import scatter_add
 
     if isinstance(gs_charge, torch.Tensor):
         device = gs_charge.device

@@ -119,7 +119,6 @@ class DigitCaps(nn.Module):
         num_routes: the actual num of input capsules, see doc string in PrimaryCaps
         in_channels: dims_in_vectors
         out_channels: dims_out_vectors
-        USE_CUDA
         '''
         super(DigitCaps, self).__init__()
 
