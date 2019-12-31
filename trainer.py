@@ -140,7 +140,7 @@ def main(grid_size=64, batch_size=27, epochs=1, lr=0.0001, device=0, device_ids=
         num_sample = [int(num_sample * train_ratio), num_sample - int(num_sample * train_ratio)]
         loader = ZINCH5Dataloader(zinc, batch_size=batch_size, num_workers=num_workers)
 
-        model = ForceFiledCapsNet(device_ids=device_ids, grid_size=grid_size).to(device)
+        model = ForceFieldCapsNet(device_ids=device_ids, grid_size=grid_size).to(device)
         optimizer = optim.Adam(model.parameters(), lr=lr)
 
         # get training started

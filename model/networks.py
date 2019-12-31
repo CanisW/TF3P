@@ -6,10 +6,10 @@ from model.modules import *
 from data.force_field import from_array_to_ff_batch
 
 
-class ForceFiledCapsNet(nn.Module):
+class ForceFieldCapsNet(nn.Module):
     def __init__(self, device_ids=None, grid_size=50, group_size=1, num_prim_caps=32, dim_prim_vect=4,
                  num_digit_caps=166, dim_digit_vect=8):
-        super(ForceFiledCapsNet, self).__init__()
+        super(ForceFieldCapsNet, self).__init__()
 
         self.array2ff = Lambda(from_array_to_ff_batch, grid_size=grid_size, group_size=group_size)
         self.array2ff = RaggedDataParallel(self.array2ff, device_ids=device_ids)
